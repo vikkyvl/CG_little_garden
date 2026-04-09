@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://pg5lglea30yn"]
+
+[ext_resource type="Script" uid="uid://1x0xqg8rje0q" path="res://scenes/flowers/flower.gd" id="1_6t732"]
+[ext_resource type="Texture2D" uid="uid://ggfpvue8t6n" path="res://assets/sprites/flower_objects.png" id="2_pm1ba"]
+[ext_resource type="Texture2D" uid="uid://cbw5yswarw0tg" path="res://assets/sprites/sprite_1.png" id="3_fllfx"]
+[ext_resource type="Texture2D" uid="uid://xjcen8e85plj" path="res://assets/sprites/sprite_0.png" id="4_m2xos"]
+[ext_resource type="Texture2D" uid="uid://bfbob1jjyuf8j" path="res://assets/sprites/sprite_2.png" id="5_u8r83"]
+[ext_resource type="Texture2D" uid="uid://c5ll85mtr7fqr" path="res://assets/sprites/Tools.png" id="6_m2xos"]
+[ext_resource type="AudioStream" uid="uid://dbjmtwci4i4d" path="res://assets/music/plant_grow.mp3" id="7_u8r83"]
+[ext_resource type="AudioStream" uid="uid://cir8ydpvrqd5o" path="res://assets/sounds/koiroylers-get-coin-351945.mp3" id="8_c2qs6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpobd"]
+atlas = ExtResource("2_pm1ba")
+region = Rect2(32, 0, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fllfx"]
+atlas = ExtResource("2_pm1ba")
+region = Rect2(32, 26, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2xos"]
+atlas = ExtResource("2_pm1ba")
+region = Rect2(32, 52, 16, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8r83"]
+atlas = ExtResource("2_pm1ba")
+region = Rect2(32, 78, 16, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5pb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpobd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fllfx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2xos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8r83")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ufkgp"]
+radius = 5.0990195
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2qs6"]
+atlas = ExtResource("6_m2xos")
+region = Rect2(2, 3, 16, 10)
+
+[node name="Daisy" type="Node2D" unique_id=167448473]
+script = ExtResource("1_6t732")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=449078059]
+position = Vector2(0, 2.0000002)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_q5pb7")
+frame = 3
+frame_progress = 0.44839427
+offset = Vector2(0, -16)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2002496691]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1147514319]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_ufkgp")
+
+[node name="Label" type="Label" parent="." unique_id=2126131974]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=372819226]
+offset_left = 5.0
+offset_top = -14.0
+offset_right = 45.0
+offset_bottom = 26.0
+fill_mode = 3
+texture_under = ExtResource("3_fllfx")
+texture_over = ExtResource("4_m2xos")
+texture_progress = ExtResource("5_u8r83")
+
+[node name="Timer" type="Timer" parent="." unique_id=1743539070]
+
+[node name="WaterIcon" type="Sprite2D" parent="." unique_id=905238890]
+position = Vector2(0, -9)
+scale = Vector2(0.5625, 0.5625)
+texture = SubResource("AtlasTexture_c2qs6")
+
+[node name="WaterSound" type="AudioStreamPlayer" parent="." unique_id=1346778449]
+stream = ExtResource("7_u8r83")
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="." unique_id=689972330]
+stream = ExtResource("8_c2qs6")

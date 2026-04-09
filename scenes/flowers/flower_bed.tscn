@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dbv73m00ga3r7"]
+
+[ext_resource type="Script" uid="uid://bo2xh71euqn7l" path="res://scenes/flowers/flower_bed.gd" id="1_67myj"]
+[ext_resource type="Texture2D" uid="uid://x2i4b80hni2m" path="res://assets/sprites/dialog box character finished talking click to continue indicator - spritesheet .png" id="2_j4t25"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uplh"]
+atlas = ExtResource("2_j4t25")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thqcq"]
+atlas = ExtResource("2_j4t25")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl8w2"]
+atlas = ExtResource("2_j4t25")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ysnr"]
+atlas = ExtResource("2_j4t25")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3khwx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uplh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thqcq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl8w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ysnr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oymcr"]
+radius = 3.0
+
+[node name="FlowerBed" type="Node2D" unique_id=1946593324]
+script = ExtResource("1_67myj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1172281547]
+position = Vector2(1, -2)
+sprite_frames = SubResource("SpriteFrames_3khwx")
+autoplay = "default"
+frame_progress = 0.062915824
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1999607774]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1444488731]
+shape = SubResource("CircleShape2D_oymcr")
+
+[node name="HintLabel" type="Label" parent="." unique_id=574599747]
+offset_right = 40.0
+offset_bottom = 23.0
