@@ -1,0 +1,265 @@
+[gd_scene format=4 uid="uid://bxhnl1h7mylvf"]
+
+[ext_resource type="PackedScene" uid="uid://bib56hugcfnkw" path="res://scenes/character/player.tscn" id="1_7h61r"]
+[ext_resource type="TileSet" uid="uid://uelmsn687ndm" path="res://tileset/game_tile_set.tres" id="2_0sr1o"]
+[ext_resource type="PackedScene" uid="uid://d0hjaj3s6f4d8" path="res://scenes/ui/flower_select_ui.tscn" id="4_5i0tg"]
+[ext_resource type="FontFile" uid="uid://c13maaf6a0r2v" path="res://assets/fonts/pixelFont-7-8x14-sproutLands.ttf" id="4_87uf6"]
+[ext_resource type="Script" uid="uid://ct8yvm5fmgsyw" path="res://scenes/ui/coins_ui.gd" id="4_kelw5"]
+[ext_resource type="Theme" uid="uid://d2aiy4auv8j3n" path="res://scenes/ui/game_ui_theme.tres" id="5_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://dbv73m00ga3r7" path="res://scenes/flowers/flower_bed.tscn" id="5_bdhmt"]
+[ext_resource type="Texture2D" uid="uid://d4ffipej6i4ib" path="res://assets/sprites/Sprite sheet for Basic Pack.png" id="6_4j704"]
+[ext_resource type="PackedScene" uid="uid://55c6h6mik0oj" path="res://scenes/ui/flower_dialog.tscn" id="6_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://cdqdjx02f0m1o" path="res://scenes/ui/flower_shop.tscn" id="7_87uf6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyinl"]
+atlas = ExtResource("6_4j704")
+region = Rect2(628, 115, 7, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j704"]
+atlas = ExtResource("6_4j704")
+region = Rect2(773, 100, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kp23o"]
+texture = SubResource("AtlasTexture_4j704")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp23o"]
+atlas = ExtResource("6_4j704")
+region = Rect2(805, 102, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5jirj"]
+texture = SubResource("AtlasTexture_kp23o")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jirj"]
+atlas = ExtResource("6_4j704")
+region = Rect2(805, 102, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vaxfo"]
+texture = SubResource("AtlasTexture_5jirj")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaxfo"]
+atlas = ExtResource("6_4j704")
+region = Rect2(773, 68, 22, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ftsea"]
+texture = SubResource("AtlasTexture_vaxfo")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otnwt"]
+atlas = ExtResource("6_4j704")
+region = Rect2(805, 70, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3xj4h"]
+texture = SubResource("AtlasTexture_otnwt")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v6r0"]
+atlas = ExtResource("6_4j704")
+region = Rect2(805, 70, 22, 22)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uyinl"]
+texture = SubResource("AtlasTexture_5v6r0")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j704"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j704"]
+size = Vector2(36, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kp23o"]
+size = Vector2(20, 0)
+
+[node name="Game" type="Node2D" unique_id=108922918]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1865440229]
+zoom = Vector2(5, 5)
+limit_left = -130
+limit_top = -80
+limit_right = 130
+limit_bottom = 80
+
+[node name="Player" parent="." unique_id=298850131 instance=ExtResource("1_7h61r")]
+z_index = 1
+position = Vector2(-86, 2)
+
+[node name="GameTileMap" type="Node" parent="." unique_id=561668208]
+
+[node name="Grass" type="TileMapLayer" parent="GameTileMap" unique_id=1655028236]
+tile_map_data = PackedByteArray("AAD5//z/AQAQAAUAAAD5//3/AQAQAAUAAAD5//7/AQAQAAUAAAD5////AQAQAAUAAAD5/wAAAQAQAAUAAAD5/wEAAQAQAAUAAAD5/wIAAQAQAAUAAAD6//z/AQAQAAUAAAD6//3/AQAQAAUAAAD6//7/AQAQAAUAAAD6////AQAQAAUAAAD6/wAAAQAQAAUAAAD6/wEAAQAQAAUAAAD6/wIAAQAQAAUAAAD7//z/AQAQAAUAAAD7//3/AQAQAAUAAAD7//7/AQAQAAUAAAD7////AQAQAAUAAAD7/wAAAQAQAAUAAAD7/wEAAQAQAAUAAAD7/wIAAQAQAAUAAAD8//z/AQAQAAUAAAD8//3/AQAQAAUAAAD8//7/AQAQAAUAAAD8////AQAQAAUAAAD8/wAAAQAQAAUAAAD8/wEAAQAQAAUAAAD8/wIAAQAQAAUAAAD9//z/AQAQAAUAAAD9//3/AQAQAAUAAAD9//7/AQAQAAUAAAD9////AQAQAAUAAAD9/wEAAQAQAAUAAAD9/wIAAQAQAAUAAAD+//z/AQAQAAUAAAD+//3/AQAQAAUAAAD+//7/AQAQAAUAAAD+////AQAQAAUAAAD+/wAAAQAQAAUAAAD+/wEAAQAQAAUAAAD+/wIAAQAQAAUAAAD///z/AQAQAAUAAAD///3/AQAQAAUAAAD//wAAAQAQAAUAAAD//wEAAQAQAAUAAAD//wIAAQAQAAUAAAAAAPz/AQAQAAUAAAAAAP3/AQAQAAUAAAAAAP7/AQAQAAUAAAAAAAAAAQAQAAUAAAAAAAEAAQAQAAUAAAAAAAIAAQAQAAUAAAABAPz/AQAQAAUAAAABAP3/AQAQAAUAAAABAP7/AQAQAAUAAAABAP//AQAQAAUAAAABAAAAAQAQAAUAAAABAAEAAQAQAAUAAAABAAIAAQAQAAUAAAACAPz/AQAQAAUAAAACAP3/AQAQAAUAAAACAP7/AQAQAAUAAAACAP//AQAQAAUAAAACAAAAAQAQAAUAAAACAAEAAQAQAAUAAAACAAIAAQAQAAUAAAADAPz/AQAQAAUAAAADAP3/AQAQAAUAAAADAP7/AQAQAAUAAAADAP//AQAQAAUAAAADAAAAAQAQAAUAAAADAAEAAQAQAAUAAAADAAIAAQAQAAUAAAAEAPz/AQAQAAUAAAAEAP3/AQAQAAUAAAAEAP7/AQAQAAUAAAAEAP//AQAQAAUAAAAEAAAAAQAQAAUAAAAEAAEAAQAQAAUAAAAEAAIAAQAQAAUAAAD4//v/AQAQAAUAAAD4//z/AQAQAAUAAAD4//3/AQAQAAUAAAD4//7/AQAQAAUAAAD4////AQAQAAUAAAD4/wAAAQAQAAUAAAD4/wEAAQAQAAUAAAD4/wIAAQAQAAUAAAD4/wMAAQAQAAUAAAD5//v/AQAQAAUAAAD5/wMAAQAQAAUAAAD6//v/AQAQAAUAAAD6/wMAAQAQAAUAAAD7//v/AQAQAAUAAAD7/wMAAQAQAAUAAAD8//v/AQAQAAUAAAD8/wMAAQAQAAUAAAD9//v/AQAQAAUAAAD9/wMAAQAQAAUAAAD+//v/AQAQAAUAAAD+/wMAAQAQAAUAAAD///v/AQAQAAUAAAD//wMAAQAQAAUAAAAAAPv/AQAQAAUAAAAAAAMAAQAQAAUAAAABAPv/AQAQAAUAAAABAAMAAQAQAAUAAAACAPv/AQAQAAUAAAACAAMAAQAQAAUAAAADAPv/AQAQAAUAAAADAAMAAQAQAAUAAAAEAPv/AQAQAAUAAAAEAAMAAQAQAAUAAAAFAPv/AQAQAAUAAAAFAPz/AQAQAAUAAAAFAP3/AQAQAAUAAAAFAP7/AQAQAAUAAAAFAP//AQAQAAUAAAAFAAAAAQAQAAUAAAAFAAEAAQAQAAUAAAAFAAIAAQAQAAUAAAAFAAMAAQAQAAUAAAAGAPv/AQAQAAUAAAAGAPz/AQAQAAUAAAAGAP3/AQAQAAUAAAAGAP7/AQAQAAUAAAAGAP//AQAQAAUAAAAGAAAAAQAQAAUAAAAGAAEAAQAQAAUAAAAGAAIAAQAQAAUAAAAGAAMAAQAQAAUAAAAHAPv/AQAQAAUAAAAHAPz/AQAQAAUAAAAHAP3/AQAQAAUAAAAHAP7/AQAQAAUAAAAHAP//AQAQAAUAAAAHAAAAAQAQAAUAAAAHAAEAAQAQAAUAAAAHAAIAAQAQAAUAAAAHAAMAAQAQAAUAAAD4/wQAAQAQAAUAAAD5/wQAAQAQAAUAAAD6/wQAAQAQAAUAAAD7/wQAAQAQAAUAAAD8/wQAAQAQAAUAAAD9/wQAAQAQAAUAAAD+/wQAAQAQAAUAAAD//wQAAQAQAAUAAAAAAAQAAQAQAAUAAAABAAQAAQAQAAUAAAACAAQAAQAQAAUAAAADAAQAAQAQAAUAAAAEAAQAAQAQAAUAAAAFAAQAAQAQAAUAAAAGAAQAAQAQAAUAAAAHAAQAAQAQAAUAAAAAAP//AQAQAAUAAAD9/wAAAQAQAAUAAAD///7/AQAQAAUAAAD/////AQAQAAUAAAA=")
+tile_set = ExtResource("2_0sr1o")
+
+[node name="Ground" type="TileMapLayer" parent="GameTileMap" unique_id=380618772]
+tile_map_data = PackedByteArray("AAD+//7/AQACAAEAAAD///7/AQADAAEAAAAAAP7/AQAEAAEAAAABAP7/AQAFAAEAAAABAP//AQAFAAIAAAAAAP//AQAEAAIAAAD/////AQADAAIAAAD+////AQACAAIAAAD+/wAAAQACAAMAAAD//wAAAQADAAMAAAAAAAAAAQAEAAMAAAABAAAAAQAFAAMAAAD+/wEAAQACAAQAAAD//wEAAQADAAQAAAAAAAEAAQAEAAQAAAABAAEAAQAFAAQAAAA=")
+tile_set = ExtResource("2_0sr1o")
+
+[node name="Plants" type="TileMapLayer" parent="GameTileMap" unique_id=1789669778]
+tile_map_data = PackedByteArray("AAD8/wIAAQAAAAUAAAABAP3/AQAMAAUAAAAEAAMAAQACAAUAAAD7/wAAAQAAAAUAAAACAAEAAQADAAUAAAD//wMAAQADAAUAAAD9//z/AQADAAUAAAADAP//AQARAAAAAAADAAAAAQARAAEAAAADAAEAAQARAAIAAAAEAAEAAQASAAIAAAAEAAAAAQASAAEAAAAEAP//AQASAAAAAAA=")
+tile_set = ExtResource("2_0sr1o")
+
+[node name="Inventory" type="TileMapLayer" parent="GameTileMap" unique_id=1423679740]
+tile_map_data = PackedByteArray("AAD7//3/AQASAAMAAAD6//3/AQARAAMAAAD8//3/AQATAAMAAAD6//7/AQARAAQAAAD6////AQARAAUAAAD7//7/AQASAAQAAAD7////AQASAAUAAAD8//7/AQATAAQAAAD8////AQATAAUAAAA=")
+tile_set = ExtResource("2_0sr1o")
+
+[node name="Roof" type="TileMapLayer" parent="GameTileMap" unique_id=1135506240]
+z_index = 2
+tile_map_data = PackedByteArray("AAD6//3/AQARAAMAAAD7//3/AQASAAMAAAD8//3/AQATAAMAAAD6//7/AQARAAQAAAD7//7/AQASAAQAAAD8//7/AQATAAQAAAA=")
+tile_set = ExtResource("2_0sr1o")
+
+[node name="Tree" type="TileMapLayer" parent="GameTileMap" unique_id=896590416]
+z_index = 2
+tile_map_data = PackedByteArray("AAADAP//AQARAAAAAAAEAP//AQASAAAAAAADAAAAAQARAAEAAAAEAAAAAQASAAEAAAA=")
+tile_set = ExtResource("2_0sr1o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2084510180]
+script = ExtResource("4_kelw5")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1062544622]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 74.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1413407798]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="CoinsLabel" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=238390703]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("5_2a8rs")
+theme_override_fonts/font = ExtResource("4_87uf6")
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinIcon" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=128671153]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = SubResource("AtlasTexture_uyinl")
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1891507979]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = ExtResource("5_2a8rs")
+theme_override_constants/separation = 8
+
+[node name="ShopButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=103218231]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_kp23o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5jirj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vaxfo")
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1654114535]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+theme_override_font_sizes/font_size = 21
+theme_override_styles/normal = SubResource("StyleBoxTexture_ftsea")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3xj4h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uyinl")
+
+[node name="VolumeSlider" type="HSlider" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1016399460]
+layout_mode = 2
+theme_override_styles/slider = SubResource("StyleBoxFlat_4j704")
+
+[node name="FlowerSelectUI" parent="." unique_id=1085764192 instance=ExtResource("4_5i0tg")]
+
+[node name="FlowerBeds" type="Node2D" parent="." unique_id=1635260046]
+position = Vector2(-23, 28)
+
+[node name="FlowerBed" parent="FlowerBeds" unique_id=1946593324 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(-1, -4)
+
+[node name="FlowerBed2" parent="FlowerBeds" unique_id=962960597 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(15, -4)
+
+[node name="FlowerBed3" parent="FlowerBeds" unique_id=1277316930 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(31, -4)
+
+[node name="FlowerBed4" parent="FlowerBeds" unique_id=77541479 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(47, -4)
+
+[node name="FlowerBed5" parent="FlowerBeds" unique_id=100020054 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(-1, -20)
+
+[node name="FlowerBed6" parent="FlowerBeds" unique_id=408779194 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(15, -20)
+
+[node name="FlowerBed7" parent="FlowerBeds" unique_id=2003828379 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(31, -20)
+
+[node name="FlowerBed8" parent="FlowerBeds" unique_id=600438646 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(47, -20)
+
+[node name="FlowerBed9" parent="FlowerBeds" unique_id=248101199 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(-1, -36)
+
+[node name="FlowerBed10" parent="FlowerBeds" unique_id=510463876 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(15, -36)
+
+[node name="FlowerBed11" parent="FlowerBeds" unique_id=560269474 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(31, -36)
+
+[node name="FlowerBed12" parent="FlowerBeds" unique_id=201314008 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(47, -36)
+
+[node name="FlowerBed13" parent="FlowerBeds" unique_id=1954986788 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(-1, -52)
+
+[node name="FlowerBed14" parent="FlowerBeds" unique_id=450700054 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(15, -52)
+
+[node name="FlowerBed15" parent="FlowerBeds" unique_id=1466423411 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(31, -52)
+
+[node name="FlowerBed16" parent="FlowerBeds" unique_id=818697066 instance=ExtResource("5_bdhmt")]
+z_index = 1
+position = Vector2(47, -52)
+
+[node name="FlowerDialog" parent="." unique_id=12076000 instance=ExtResource("6_bdhmt")]
+
+[node name="FlowerShop" parent="." unique_id=2109111475 instance=ExtResource("7_87uf6")]
+
+[node name="Collision" type="Node2D" parent="." unique_id=1007205380]
+
+[node name="HouseCollision" type="StaticBody2D" parent="Collision" unique_id=1881844785]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/HouseCollision" unique_id=467932986]
+position = Vector2(-72, -17)
+shape = SubResource("RectangleShape2D_4j704")
+
+[node name="TreeCollision" type="StaticBody2D" parent="Collision" unique_id=1238060729]
+position = Vector2(75, -22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/TreeCollision" unique_id=1818539130]
+position = Vector2(-11, 34)
+shape = SubResource("RectangleShape2D_kp23o")
