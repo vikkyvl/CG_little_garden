@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c1sawkj4h3wsk"]
+
+[ext_resource type="AudioStream" uid="uid://blf0y32t2dk4t" path="res://assets/music/679054_migfus20_relaxing-chiptune-music.mp3" id="1_b4qi4"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1952481109]
+process_mode = 3
+stream = ExtResource("1_b4qi4")
+autoplay = true
