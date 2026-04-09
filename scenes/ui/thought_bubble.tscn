@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://copnjm7exqaq5"]
+
+[ext_resource type="Script" uid="uid://bp5vbn0880ub" path="res://scenes/ui/thought_bubble.gd" id="1_003sp"]
+[ext_resource type="Texture2D" uid="uid://b7bwuqgvdi5qg" path="res://assets/sprites/speech_bubble_grey.png" id="1_ytvgf"]
+[ext_resource type="FontFile" uid="uid://c13maaf6a0r2v" path="res://assets/fonts/pixelFont-7-8x14-sproutLands.ttf" id="3_iwpk3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_003sp"]
+atlas = ExtResource("1_ytvgf")
+region = Rect2(11, 11, 42, 47)
+
+[node name="ThoughtBubble" type="Node2D" unique_id=560646140]
+script = ExtResource("1_003sp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=532588074]
+position = Vector2(0, -25.999998)
+scale = Vector2(0.52380955, 0.52380955)
+texture = SubResource("AtlasTexture_003sp")
+
+[node name="Label" type="Label" parent="." unique_id=1480370942]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -34.0
+offset_right = 9.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.41960785, 0.29803923, 0.36078432, 1)
+theme_override_fonts/font = ExtResource("3_iwpk3")
+theme_override_font_sizes/font_size = 7
+horizontal_alignment = 1
+vertical_alignment = 1

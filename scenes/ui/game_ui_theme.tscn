@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dbcs504quiwmo"]
+
+[ext_resource type="Texture2D" uid="uid://d4ffipej6i4ib" path="res://assets/sprites/Sprite sheet for Basic Pack.png" id="1_4jjsb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrfoa"]
+atlas = ExtResource("1_4jjsb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_whyay"]
+texture = SubResource("AtlasTexture_rrfoa")
+
+[sub_resource type="Theme" id="Theme_mocuy"]
+DarkWoodPanel/base_type = &"PanelContainer"
+DarkWoodPanel/styles/panel = SubResource("StyleBoxTexture_whyay")
+
+[node name="ToolsPanel" type="PanelContainer" unique_id=1255587936]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_mocuy")
+theme_type_variation = &"DarkWoodPanel"

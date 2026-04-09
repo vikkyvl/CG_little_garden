@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://55c6h6mik0oj"]
+
+[ext_resource type="Script" uid="uid://b7mycdg10pj3v" path="res://scenes/ui/flower_dialog.gd" id="1_i6y5b"]
+[ext_resource type="Theme" uid="uid://d2aiy4auv8j3n" path="res://scenes/ui/game_ui_theme.tres" id="2_0cg1u"]
+[ext_resource type="AudioStream" uid="uid://cir8ydpvrqd5o" path="res://assets/sounds/koiroylers-get-coin-351945.mp3" id="3_ggcwm"]
+
+[node name="FlowerDialog" type="CanvasLayer" unique_id=12076000]
+script = ExtResource("1_i6y5b")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2138698550]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -85.5
+offset_right = 63.0
+offset_bottom = 85.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0cg1u")
+theme_type_variation = &"GameLabel"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2053052982]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=221169449]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1973553914]
+layout_mode = 2
+theme_type_variation = &"FontColor"
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RewardLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=595686824]
+layout_mode = 2
+theme_type_variation = &"FontColor"
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollectButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=87505620]
+custom_minimum_size = Vector2(64, 54)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+theme_override_font_sizes/font_size = 32
+text = "Collect"
+
+[node name="KeepButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1777119882]
+custom_minimum_size = Vector2(64, 54)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+theme_override_font_sizes/font_size = 32
+text = "Keep"
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="." unique_id=965874974]
+stream = ExtResource("3_ggcwm")
